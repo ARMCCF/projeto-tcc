@@ -1,9 +1,18 @@
 import {React, useState} from 'react';
 import './style.css';
 import Logo from './img/imglogo.png'
+import Carousel from "react-elastic-carousel"
+import Item from "./Item";
 import styled from 'styled-components'
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
+
+const breakPoints = [
+  { width: 6, itemsToShow: 1 },
+  { width: 600, itemsToShow: 2 },
+  { width: 1000, itemsToShow: 3 },
+  { width: 4000, itemsToShow: 4 },
+];
 
 const Input = styled.input.attrs(props => ({
   
@@ -18,7 +27,7 @@ const Input = styled.input.attrs(props => ({
     /* here we use the dynamically computed prop */
     margin: ${props => props.size};
     padding: ${props => props.size};
-    width: 700px;
+    width: 550px;
     height: 40px;
     padding: 0 20px;
   `;
@@ -35,6 +44,7 @@ const Input = styled.input.attrs(props => ({
     padding 0 15px;
     align-items: center;
   `;
+
 
 function Home() {
     return (
@@ -74,11 +84,23 @@ function Home() {
                     
                     </div>
                     <div className='carrinho'>
-                    <HiOutlineShoppingBag  />
+                    <HiOutlineShoppingBag />
                     </div>
                 </div>
             </header>
-            <main className='main'>main</main>
+            <main className='main'>
+              <div className='carosel'>
+            <Carousel breakPoints={breakPoints}>
+              <Item><img src={Logo} width='200px' /></Item>
+              <Item><img src={Logo} width='200px' /></Item>
+              <Item><img src={Logo} width='200px' /></Item>
+              <Item><img src={Logo} width='200px' /></Item>
+              <Item><img src={Logo} width='200px' /></Item>
+              <Item><img src={Logo} width='200px' /></Item>
+
+            </Carousel>
+              </div>
+            </main>
         </div>
     );
     

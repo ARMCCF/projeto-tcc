@@ -19,10 +19,22 @@
     background: grey;
     height: 100vh;
     display: flex;
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.login{
-    margin: 0;
+.carrinho{
+    margin: 0 20;
+    width: 80px;
 }
+
+.carosel {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    height: 800px;
+    width: 100%;
+    background-color:rgb(233, 138, 138);
+  }
